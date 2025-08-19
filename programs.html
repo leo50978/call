@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Golden Customer Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .programs-hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        .hamburger-active > span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-active > span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active > span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .nav-mobile {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .nav-mobile-open {
+            max-height: 500px;
+        }
+        .program-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #3b82f6;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .benefit-item {
+            transition: all 0.3s ease;
+        }
+        .benefit-item:hover {
+            background-color: #dbeafe;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+  <header class="fixed w-full top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="logocenter.png" alt="Logo" class="w-12 h-12 object-contain" />
+            </a>
+
+            <!-- Hamburger (visible below lg) -->
+            <button id="hamburger" aria-label="Open menu" class="lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+            </button>
+
+            <!-- Navigation for tablet and desktop -->
+            <nav class="hidden lg:flex items-center justify-between flex-grow ml-6">
+                <div class="flex flex-wrap gap-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+                    <a href="services.html" class="text-blue-600 font-medium transition">Services</a>
+                    <a href="carrees.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Careers</a>
+                    <a href="index.htmlcarrees.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Partnership</a>
+                    <a href="index.html#faq" class="text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+                </div>
+
+                <div class="flex gap-3 ml-6">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition">Join Our Team</a>
+                    <a href="index.htmlcarrees.html" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium transition">Partner With Us</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="nav-mobile" class="lg:hidden hidden bg-white w-full shadow-inner">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-blue-600">Home</a>
+                <a href="index.html#about" class="block text-gray-700 hover:text-blue-600">About</a>
+                <a href="services.html" class="block text-blue-600 font-medium">Services</a>
+                <a href="carrees.html" class="block text-gray-700 hover:text-blue-600">Careers</a>
+                <a href="index.htmlcarrees.html" class="block text-gray-700 hover:text-blue-600">Partnership</a>
+                <a href="index.html#faq" class="block text-gray-700 hover:text-blue-600">FAQ</a>
+                <a href="index.html#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+
+                <div class="pt-4 flex flex-col space-y-2">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center">Join Our Team</a>
+                    <a href="index.htmlcarrees.html" class="bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="programs-hero min-h-[60vh] flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Professional Interpreter Training Programs</h1>
+                <p class="text-xl md:text-2xl mb-10">Build a rewarding career as a certified interpreter with our comprehensive training programs designed for Haitian Creole speakers.</p>
+                <a href="#programs" class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg font-bold text-lg transition">Explore Our Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Overview -->
+    <section id="programs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">Our Training Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We offer specialized training programs to prepare you for a successful career in interpretation across various industries.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Medical Interpretation Program -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <span class="text-2xl">🩺</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Medical Interpretation Certification</h3>
+                            <span class="text-blue-600 font-medium">8-week program</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Learn the specialized skills needed to work as a medical interpreter in hospitals, clinics, and healthcare settings.</p>
+                    <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Medical terminology in English and Haitian Creole</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Ethics and confidentiality in healthcare settings</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 极"></path>
+                            </svg>
+                            <span>Cultural competency for patient care</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold">$599</span>
+                        <a href="#apply" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Legal Interpretation Program -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <span class="text-2xl">⚖️</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Legal Interpretation Certification</h3>
+                            <span class="text-blue-600 font-medium">10-week program</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Gain the expertise needed to work in legal settings, including courts, law offices, and government agencies.</p>
+                    <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Legal terminology and procedures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13极4 4L19 7"></path>
+                            </svg>
+                            <span>Courtroom protocols and ethics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Immigration and legal document translation</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold">$699</span>
+                        <a href="#apply" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Conference Interpretation Program -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <span class="text-2xl">🎤</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Conference Interpretation</h3>
+                            <span class="text-blue-600 font-medium">6-week program</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Master the art of simultaneous and consecutive interpretation for conferences and large events.</p>
+                    <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" view极="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Simultaneous interpretation techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Note-taking for consecutive interpretation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Voice projection and public speaking skills</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold">$549</span>
+                        <a href="#apply" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Professional Development Program -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <span class="text-2xl">📈</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Advanced Professional Development</h3>
+                            <span class="text-blue-600 font-medium">4-week program</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Enhance your professional skills with our advanced program focused on career development and specialization.</p>
+                    <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Business development for interpreters</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Specialization in specific industries</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Building a professional portfolio</span>
+                        </li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-600 font-bold">$499</span>
+                        <a href="#apply" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">How Our Programs Work</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our training programs are designed to provide you with the knowledge and skills needed to succeed as a professional interpreter.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Application & Assessment</h3>
+                        <p class="text-gray-600">Submit your application and complete a language assessment to determine your current proficiency level.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Theoretical Training</h3>
+                        <p class="text-gray-600">Learn the fundamentals of interpretation, ethics, terminology, and techniques through our comprehensive curriculum.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Practical Exercises</h3>
+                        <p class="text-gray-600">Apply your knowledge in realistic scenarios with guided practice sessions and feedback from experienced instructors.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Certification Exam</h3>
+                        <p class="text-gray-600">Demonstrate your skills through a comprehensive final examination to earn your professional interpreter certification.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Career Placement</h3>
+                        <p class="text-gray-600">Receive assistance with job placement and career development opportunities upon successful completion of the program.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">Why Choose Our Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our interpreter training programs offer unique advantages that set you up for success in your career.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="benefit-item bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <span class="text-xl">👥</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Experienced Instructors</h3>
+                    <p class="text-gray-600">Learn from industry professionals with years of experience in interpretation and training.</p>
+                </div>
+
+                <div class="benefit-item bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <span class="text-xl">💼</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Career Opportunities</h3>
+                    <p class="text-gray-600">Gain access to our network of partner organizations and exclusive job opportunities.</p>
+                </div>
+
+                <div class="benefit-item bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <span class="text-xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Flexible Learning</h3>
+                    <p class="text-gray-600">Choose between online and in-person classes to fit your schedule and learning preferences.</p>
+                </div>
+
+                <div class="benefit-item bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-14极-14 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <span class="text-xl">📜</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Industry Recognition</h3>
+                    <p class="text-gray-600">Our certifications are recognized by healthcare, legal, and business organizations nationwide.</p>
+                </div>
+
+                <div class="benefit-item bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <span class="text-xl">🔄</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ongoing Support</h3>
+                    <p class="text-gray-600">Receive continuous professional development and mentorship even after program completion.</p>
+                </div>
+
+                <div class="benefit-item bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <span class="text-xl">🤝</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Community Network</h3>
+                    <p class="text-gray-600">Join a community of interpreters for networking, collaboration, and peer support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">Success Stories</h2>
+                <p class="text-xl max-w-3xl mx-auto">Hear from our graduates who have successfully launched their careers as professional interpreters.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-700 p-6 rounded-lg">
+                    <div class="flex items-center text-blue-400 mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full mr-4"></div>
+                        <div>
+                            <h3 class="font-bold">Marie J.</h3>
+                            <p class="text-blue-200">Medical Interpreter</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-400 italic">"The medical interpretation program gave me the confidence and skills I needed to work in a hospital setting. I now have a rewarding career helping patients and healthcare providers communicate effectively."</p>
+                </div>
+
+                <div class="bg-blue-700 p-6 rounded-lg">
+                    <div class="flex items-center text-blue-400 mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full mr-4"></div>
+                        <div>
+                            <h3 class="font-bold">Jean P.</h3>
+                            <p class="text-blue-200">Legal Interpreter</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-400 italic">"The legal interpretation certification opened doors for me that I never thought possible. I now work with law firms and courts, facilitating justice for Creole-speaking clients."</p>
+                </div>
+
+                <div class="bg-blue-700 p-6 rounded-lg">
+                    <div class="flex items-center text-blue-400 mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full mr-4"></div>
+                        <div>
+                            <h3 class="font-bold">Sophia L.</h3>
+                            <p class="text-blue-200">Conference Interpreter</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-400 italic">"The conference interpretation training was challenging but incredibly rewarding. I've had the opportunity to work at international events and help bridge language barriers in real-time."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="apply" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-blue-50 rounded-xl p-8 text-center">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">Start Your Journey Today</h2>
+                <p class="text-xl text-gray-600 mb-8">Join our next cohort of aspiring interpreters and take the first step toward a rewarding career.</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-left mb-8">
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Program Application</h3>
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Program of Interest</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Medical Interpretation Certification</option>
+                                <option>Legal Interpretation Certification</option>
+                                <option>Conference Interpretation</option>
+                                <option>Advanced Professional Development</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Message (Optional)</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition">
+                            Submit Application
+                        </button>
+                    </form>
+                </div>
+                
+                <p class="text-gray-600">Have questions? <a href="index.html#contact" class="text-blue-600 hover:underline">Contact our admissions team</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="flex items-center text-blue-400 mb-4">
+                       
+                        <span class="text-xl font-bold text-white">Golden Customer Services</span>
+                    </a>
+                    <p class="text-gray-400">Professional interpreter training and certification programs for Haitian Creole speakers.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg text-blue-400 mb-4">Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition">Medical Interpretation</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition">Legal Interpretation</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition">Conference Interpretation</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition">Professional Development</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg text-blue-400 mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-400 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-gray-400">contact@goldencustomerservices.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-400 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502极4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-gray-400">+509 xxxx xxxx</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Golden Customer Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMobile = document.getElementById('nav-mobile');
+
+            hamburger.addEventListener('click', () => {
+                // Toggle mobile menu visibility
+                navMobile.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        navMobile.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

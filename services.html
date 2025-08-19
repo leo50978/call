@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Golden Customer Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .services-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('herocall.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        .hamburger-active > span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-active > span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active > span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .nav-mobile {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .nav-mobile-open {
+            max-height: 500px;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="logocenter.png" alt="Logo" class="w-12 h-12 object-contain" />
+            </a>
+
+            <!-- Hamburger (visible below lg) -->
+            <button id="hamburger" aria-label="Open menu" class="lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+            </button>
+
+            <!-- Navigation for tablet and desktop -->
+            <nav class="hidden lg:flex items-center justify-between flex-grow ml-6">
+                <div class="flex flex-wrap gap-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+                    <a href="services.html" class="text-blue-600 font-medium transition">Services</a>
+                    <a href="carrees.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Careers</a>
+                    <a href="carrees.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Partnership</a>
+                    <a href="index.html#faq" class="text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+                </div>
+
+                <div class="flex gap-3 ml-6">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition">Join Our Team</a>
+                    <a href="carrees.html" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium transition">Partner With Us</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="nav-mobile" class="lg:hidden hidden bg-white w-full shadow-inner">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-blue-600">Home</a>
+                <a href="index.html#about" class="block text-gray-700 hover:text-blue-600">About</a>
+                <a href="services.html" class="block text-blue-600 font-medium">Services</a>
+                <a href="carrees.html" class="block text-gray-700 hover:text-blue-600">Careers</a>
+                <a href="carrees.html" class="block text-gray-700 hover:text-blue-600">Partnership</a>
+                <a href="index.html#faq" class="block text-gray-700 hover:text-blue-600">FAQ</a>
+                <a href="index.html#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+
+                <div class="pt-4 flex flex-col space-y-2">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center">Join Our Team</a>
+                    <a href="carrees.html" class="bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero min-h-[50vh] flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Professional Services</h1>
+                <p class="text-xl md:text-2xl">Specialized Haitian Creole interpretation and training services for medical, legal, and conference settings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="index.html" class="text-blue-600 hover:text-blue-800">Home</a></li>
+                    <li>
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </li>
+                    <li class="text-gray-500" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Services Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-400 mb-4">Comprehensive Interpretation & Training Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Golden Customer Services provides professional Haitian Creole interpretation services across multiple sectors, along with comprehensive training programs for aspiring interpreters.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Medical Interpretation -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg border border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🩺</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Medical Interpretation</h3>
+                    <p class="text-gray-600 text-blue-400 mb-4">Professional interpretation services for healthcare settings including hospitals, clinics, and telehealth appointments.</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• Doctor's appointments & consultations</li>
+                        <li>• Emergency room visits</li>
+                        <li>• Mental health therapy sessions</li>
+                        <li>• Medical procedures & surgeries</li>
+                        <li>• Pharmacy consultations</li>
+                    </ul>
+                    <a href="#medical" class="inline-block mt-4 text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                </div>
+
+                <!-- Legal Interpretation -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg border border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">⚖️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Legal Interpretation</h3>
+                    <p class="text-gray-600 text-blue-400 mb-4">Certified interpretation for legal proceedings, government agencies, and attorney-client meetings.</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• Court hearings & depositions</li>
+                        <li>• Immigration proceedings</li>
+                        <li>• Police interviews & interrogations</li>
+                        <li>• Attorney-client consultations</li>
+                        <li>• Document translation services</li>
+                    </ul>
+                    <a href="#legal" class="inline-block mt-4 text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                </div>
+
+                <!-- Conference Interpretation -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg border border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🎤</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Conference Interpretation</h3>
+                    <p class="text-gray-600 text-blue-400 mb-4">Simultaneous and consecutive interpretation for events, meetings, and conferences.</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• International conferences</li>
+                        <li>• Business meetings</li>
+                        <li>• Educational workshops</li>
+                        <li>• Community events</li>
+                        <li>• Virtual meetings & webinars</li>
+                    </ul>
+                    <a href="#conference" class="inline-block mt-4 text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                </div>
+
+                <!-- Training Program -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg border border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🏫</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Interpreter Training Program</h3>
+                    <p class="text-gray-600 text-blue-400 mb-4">Comprehensive training for aspiring interpreters with certification upon completion.</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• Medical interpretation techniques</li>
+                        <li>• Legal terminology & procedures</li>
+                        <li>• Ethics & professional standards</li>
+                        <li>• Remote interpretation technology</li>
+                        <li>• Practical hands-on experience</li>
+                    </ul>
+                    <a href="#training" class="inline-block mt-4 text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                </div>
+
+                <!-- Remote Interpretation -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg border border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">📞</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Remote Interpretation</h3>
+                    <p class="text-gray-600 text-blue-400 mb-4">24/7 access to professional interpreters via phone or video conference.</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• Over-the-phone interpretation (OPI)</li>
+                        <li>• Video remote interpretation (VRI)</li>
+                        <li>• Emergency after-hours services</li>
+                        <li>• Scheduled appointments</li>
+                        <li>• On-demand interpretation</li>
+                    </ul>
+                    <a href="#remote" class="inline-block mt-4 text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                </div>
+
+                <!-- Document Translation -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg border border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">📝</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Document Translation</h3>
+                    <p class="text-gray-600 text-blue-400 mb-4">Accurate translation of documents with certification for official use.</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• Legal documents & contracts</li>
+                        <li>• Medical records & forms</li>
+                        <li>• Educational transcripts</li>
+                        <li>• Business communications</li>
+                        <li>• Personal documents</li>
+                    </ul>
+                    <a href="#translation" class="inline-block mt-4 text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Service Sections -->
+    <section id="medical" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Medical Interpretation Services</h2>
+                    <p class="text-gray-600 mb-6">Our certified medical interpreters facilitate clear communication between healthcare providers and Haitian Creole-speaking patients, ensuring accurate understanding of medical information, treatment plans, and procedures.</p>
+                    <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                        <h3 class="font-bold text-lg mb-3">Key Benefits:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Improved patient understanding and compliance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Enhanced accuracy in medical history collection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Reduced medical errors through clear communication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Cultural mediation for sensitive healthcare discussions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="index.html#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition inline-block">Request Medical Interpretation</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Medical Settings We Serve:</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Hospitals</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Clinics</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Emergency Rooms</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Dental Offices</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Mental Health</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Physical Therapy</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Pharmacies</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                            <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Telehealth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legal" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">Legal Interpretation Applications:</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Court hearings and trials</span>
+                            </div>
+                            <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Depositions and sworn statements</span>
+                            </div>
+                            <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Immigration proceedings and interviews</span>
+                            </div>
+                            <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Attorney-client meetings</span>
+                            </div>
+                            <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Police and law enforcement interviews</span>
+                            </div>
+                            <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Mediation and arbitration sessions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl font-bold mb-6">Legal Interpretation Services</h2>
+                    <p class="text-gray-600 mb-6">Our legal interpreters are trained in specialized terminology and procedures to ensure accurate communication in sensitive legal settings while maintaining strict confidentiality.</p>
+                    <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                        <h3 class="font-bold text-lg mb-3">Why Choose Our Legal Interpretation:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 极L19 7"></path>
+                                </svg>
+                                <span>Interpreters trained in legal terminology and procedures</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Understanding of courtroom protocols and ethics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="current极 viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Impartial and accurate interpretation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Strict adherence to confidentiality requirements</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="index.html#contact" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition inline-block">Request Legal Interpretation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional service sections would follow the same pattern -->
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Contact us today to discuss your interpretation needs or to learn more about our training programs.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#contact" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition">Contact Us</a>
+                <a href="carrees.html" class="bg-transparent border-2 border-white hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1 -->
+                <div>
+                    <a href="index.html" class="flex items-center text-blue-400 mb-4">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 极 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-blue-400">Golden Customer Services</span>
+                    </a>
+                    <p class="text-gray-400">Professional Haitian Creole interpretation and training services for medical, legal, and conference settings.</p>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold text-lg text-blue-400 mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#medical" class="text-gray-400 hover:text-white transition">Medical Interpretation</a></li>
+                        <li><a href="#legal" class="text-gray-400 hover:text-white transition">Legal Interpretation</a></li>
+                        <li><a href="#conference" class="text-gray-400 hover:text-white transition">Conference Interpretation</a></li>
+                        <li><a href="#training" class="text-gray-400 hover:text-white transition">Training Programs</a></li>
+                        <li><a href="#remote" class="text-gray-400 hover:text-white transition">Remote Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-bold text-lg text-blue-400 mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="carrees.html" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="carrees.html" class="text-gray-400 hover:text-white transition">Partnership</a></li>
+                        <li><a href="index.html#faq" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-bold text-lg text-blue-400 mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 text-blue-400 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-400 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 极 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-700 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5极14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">Languages: Haitian Creole, English, French, Spanish</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Golden Customer Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMobile = document.getElementById('nav-mobile');
+
+            hamburger.addEventListener('click', () => {
+                // Toggle mobile menu visibility
+                navMobile.classList.toggle('hidden');
+                
+                // Toggle hamburger animation
+                hamburger.classList.toggle('open');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        navMobile.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

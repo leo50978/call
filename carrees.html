@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrières & Partenariats - Golden Customer Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Heroicons -->
+    <script src="https://unpkg.com/@heroicons/react@2.0.16/dist/index.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('herocall.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        .hamburger-active > span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-active > span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active > span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .nav-mobile {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .nav-mobile-open {
+            max-height: 500px;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="logocenter.png" alt="Logo" class="w-12 h-12 object-contain" />
+            </a>
+
+            <!-- Hamburger (visible below lg) -->
+            <button id="hamburger" aria-label="Open menu" class="lg:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+                <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded"></span>
+            </button>
+
+            <!-- Navigation for tablet and desktop -->
+            <nav class="hidden lg:flex items-center justify-between flex-grow ml-6">
+                <div class="flex flex-wrap gap-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Accueil</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-blue-600 font-medium transition">À propos</a>
+                    <a href="index.html#services" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
+                    <a href="careers.html" class="text-blue-600 font-medium transition">Carrières</a>
+                    <a href="carrees.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Partenariats</a>
+                    <a href="index.html#faq" class="text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+                </div>
+
+                <div class="flex gap-3 ml-6">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition">Rejoindre notre équipe</a>
+                    <a href="carrees.html" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium transition">Devenir partenaire</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="nav-mobile" class="lg:hidden hidden bg-white w-full shadow-inner">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-blue-600">Accueil</a>
+                <a href="index.html#about" class="block text-gray-700 hover:text-blue-600">À propos</a>
+                <a href="index.html#services" class="block text-gray-700 hover:text-blue-600">Services</a>
+                <a href="careers.html" class="block text-blue-600">Carrières</a>
+                <a href="carrees.html" class="block text-gray-700 hover:text-blue-600">Partenariats</a>
+                <a href="index.html#faq" class="block text-gray-700 hover:text-blue-600">FAQ</a>
+                <a href="index.html#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+
+                <div class="pt-4 flex flex-col space-y-2">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center">Rejoindre notre équipe</a>
+                    <a href="carrees.html" class="bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg text-center">Devenir partenaire</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Rejoignez notre équipe ou devenez notre partenaire</h1>
+                <p class="text-xl md:text-2xl mb-10">Chez Golden Customer Services, nous croyons en la puissance de la collaboration et du développement professionnel. Découvrez comment vous pouvez faire partie de notre mission.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="carrees.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition">Postuler maintenant</a>
+                    <a href="carrees.html" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition">Devenir partenaire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Navigation -->
+    <div class="sticky top-16 z-40 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex">
+                <button id="careers-tab" class="tab-button active w-1/2 py-4 text-center font-medium text-lg border-b-2 border-blue-600">Carrières</button>
+                <button id="partnership-tab" class="tab-button w-1/2 py-4 text-center font-medium text-lg border-b-2 border-gray-200">Partenariats</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Carrières chez Golden Customer Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Rejoignez notre équipe d'interprètes professionnels et de spécialistes du service client. Nous offrons des formations en ligne et en présentiel, des certifications et un soutien sur le terrain.</p>
+            </div>
+
+            <!-- Benefits -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="text-center p-6 rounded-xl bg-blue-50">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">💼</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Emplois flexibles</h3>
+                    <p class="text-gray-600">Travaillez à distance selon votre emploi du temps</p>
+                </div>
+
+                <div class="text-center p-6 rounded-xl bg-blue-50">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">🎓</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Formation certifiante</h3>
+                    <p class="text-gray-600">Programmes complets avec certification à la clé</p>
+                </div>
+
+                <div class="text-center p-6 rounded-xl bg-blue-50">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">🌎</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Impact social</h3>
+                    <p class="text-gray-600">Contribuez à briser les barrières linguistiques</p>
+                </div>
+
+                <div class="text-center p-6 rounded-xl bg-blue-50">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <span class="text-2xl">📈</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Évolution professionnelle</h3>
+                    <p class="text-gray-600">Opportunités de croissance au sein de l'entreprise</p>
+                </div>
+            </div>
+
+            <!-- Positions Available -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Postes disponibles</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-2">Interprète médical</h4>
+                        <p class="text-gray-600 mb-4">Fournissez des services d'interprétation précis et confidentiels dans des contextes médicaux.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Télétravail</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Temps plein/partiel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Formation fournie</span>
+                        </div>
+                        <a href="#application-form" class="text-blue-600 font-medium hover:underline">Postuler →</a>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-2">Interprète juridique</h4>
+                        <p class="text-gray-600 mb-4">Travailler dans des contextes juridiques avec éthique et précision.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Télétravail</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Projet</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Certification requise</span>
+                        </div>
+                        <a href="#application-form" class="text-blue-600 font-medium hover:underline">Postuler →</a>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-2">Agent de service client</h4>
+                        <p class="text-gray-600 mb-4">Offrez un support client exceptionnel en plusieurs langues.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Télétravail</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Temps plein/partiel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Formation fournie</span>
+                        </div>
+                        <a href="#application-form" class="text-blue-600 font-medium hover:underline">Postuler →</a>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-2">Formateur d'interprètes</h4>
+                        <p class="text-gray-600 mb-4">Enseignez les techniques d'interprétation à la nouvelle génération.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Télétravail</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Temps partiel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Expérience requise</span>
+                        </div>
+                        <a href="#application-form" class="text-blue-600 font-medium hover:underline">Postuler →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Program -->
+            <div class="bg-blue-50 p-8 rounded-xl mb-12">
+                <h3 class="text-2xl font-bold mb-4 text-center">Notre programme de formation</h3>
+                <p class="text-gray-700 mb-6 text-center">Nous formons de nouveaux interprètes pour réussir sur le marché local et mondial avec un programme complet incluant :</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Interprétation médicale</span>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Interprétation juridique</span>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Interprétation téléphonique et vidéo</span>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Éthique et techniques d'interprétation</span>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Examen final et certification</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 text-center">La formation est disponible en ligne (à distance) ou en groupe, avec des certificats délivrés après réussite.</p>
+            </div>
+
+            <!-- Application Form -->
+            <div id="application-form" class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold mb-6 text-center">📋 Formulaire de candidature</h3>
+                <p class="text-gray-700 mb-8 text-center">Postulez maintenant pour rejoindre notre équipe professionnelle d'interprètes et d'agents de service client.</p>
+                
+                <form id="careers-form" class="space-y-8">
+                    <!-- Personal Information -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 1. Informations personnelles</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="fullName" class="block text-gray-700 mb-2">Nom complet*</label>
+                                <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="dob" class="block text-gray-700 mb-2">Date de naissance (JJ/MM/AAAA)*</label>
+                                <input type="date" id="dob" name="dob" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-2">Numéro de téléphone (WhatsApp)*</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Adresse e-mail*</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="location" class="block text-gray-700 mb-2">Ville et pays actuels*</label>
+                                <input type="text" id="location" name="location" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="timezone" class="block text-gray-700 mb-2">Fuseau horaire</label>
+                                <input type="text" id="timezone" name="timezone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internet & Equipment Check -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 2. Vérification Internet et équipement</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="stableInternet" class="mr-2">
+                                        <span>Avez-vous une connexion Internet stable?</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="headset" class="mr-2">
+                                        <span>Avez-vous un casque avec microphone?</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="quietEnvironment" class="mr-2">
+                                        <span>Travaillez-vous dans un environnement calme?</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="backup" class="mr-2">
+                                        <span>Avez-vous une source d'alimentation ou Internet de secours?</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="device" class="block text-gray-700 mb-2">Appareil utilisé pour le travail (bureau, portable, tablette, etc.)</label>
+                                <input type="text" id="device" name="device" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload Required Files -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 3. Téléchargement des fichiers requis</h4>
+                        <p class="text-gray-600 mb-4">👉 Veuillez télécharger les fichiers suivants :</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="cv" class="block text-gray-700 mb-2">📄 Téléchargez votre CV mis à jour*</label>
+                                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="governmentId" class="block text-gray-700 mb-2">🆔 Téléchargez une pièce d'identité valide* (passeport, carte d'identité nationale, etc.)</label>
+                                <input type="file" id="governmentId" name="governmentId" accept="image/*,.pdf" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="deviceImage" class="block text-gray-700 mb-2">💻 Téléchargez une image claire de l'appareil que vous utiliserez pour travailler</label>
+                                <input type="file" id="deviceImage" name="deviceImage" accept="image/*" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="speedTest" class="block text-gray-700 mb-2">🌐 Téléchargez une capture d'écran de votre test de vitesse (depuis speedtest.net)</label>
+                                <input type="file" id="speedTest" name="speedTest" accept="image/*" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="vocaroo" class="block text-gray-700 mb-2">🔊 Collez votre lien vocal Vocaroo ici (1 à 2 min de présentation)</label>
+                                <input type="url" id="vocaroo" name="vocaroo" placeholder="https://vocaroo.com/________________________" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Language Proficiency -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 4. Maîtrise des langues</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Langues que vous parlez couramment (cochez toutes celles qui s'appliquent) :</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="languages" value="Haitian Creole" class="mr-2"> Créole haïtien
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="languages" value="English" class="mr-2"> Anglais
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="languages" value="French" class="mr-2"> Français
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="languages" value="Spanish" class="mr-2"> Espagnol
+                                    </label>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="text" name="otherLanguages" placeholder="Autres langues..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="languagePair" class="block text-gray-700 mb-2">Paire de langues de travail principale (ex. : Créole ↔ Anglais) :</label>
+                                <input type="text" id="languagePair" name="languagePair" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience & Training -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 5. Expérience et formation</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Avez-vous de l'expérience dans :</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="experience" value="Call Center" class="mr-2"> Centre d'appels
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="experience" value="Interpretation" class="mr-2"> Interprétation
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="experience" value="Customer Service" class="mr-2"> Service client
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="experience" value="Sales" class="mr-2"> Vente
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="experience" value="Technical Support" class="mr-2"> Support technique
+                                    </label>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="text" name="otherExperience" placeholder="Autre expérience..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Avez-vous déjà été formé à l'interprétation ou au service client ?</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="previousTraining" value="yes" class="mr-2"> Oui (précisez) :
+                                        <input type="text" name="trainingDetails" class="ml-2 flex-1 px-3 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="previousTraining" value="no-willing" class="mr-2"> Non - Disposé à être formé : Oui
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="previousTraining" value="no-not-willing" class="mr-2"> Non - Disposé à être formé : Non
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 6. Disponibilité</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Type d'horaire que vous recherchez :</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="scheduleType" value="full-time" class="mr-2"> Temps plein
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="scheduleType" value="part-time" class="mr-2"> Temps partiel
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="scheduleType" value="flexible" class="mr-2"> Sur appel / Flexible
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="startDate" class="block text-gray-700 mb-2">Quand êtes-vous disponible pour commencer ?</label>
+                                <input type="date" id="startDate" name="startDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="availability" class="block text-gray-700 mb-2">Jours et heures où vous êtes disponible pour travailler (avec fuseau horaire) :</label>
+                                <textarea id="availability" name="availability" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motivation -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-blue-600">🔹 7. Motivation</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="motivation" class="block text-gray-700 mb-2">Pourquoi souhaitez-vous travailler en tant qu'agent de centre d'appels avec nous ?</label>
+                                <textarea id="motivation" name="motivation" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Quelles sont vos 3 meilleures forces liées à la communication ou au travail d'équipe ?</label>
+                                <div class="space-y-2">
+                                    <div>
+                                        <label class="block text-gray-600 text-sm">1.</label>
+                                        <input type="text" name="strength1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-600 text-sm">2.</label>
+                                        <input type="text" name="strength2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-600 text-sm">3.</label>
+                                        <input type="text" name="strength3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Signature -->
+                    <div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="digitalSignature" class="block text-gray-700 mb-2">✅ Signature numérique (Nom complet) :</label>
+                                <input type="text" id="digitalSignature" name="digitalSignature" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="signatureDate" class="block text-gray-700 mb-2">📅 Date :</label>
+                                <input type="date" id="signatureDate" name="signatureDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Important Notice -->
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <p class="text-yellow-800"><strong>⚠️ Note importante :</strong> Votre candidature ne sera examinée que si tous les documents requis sont téléchargés clairement et complètement.</p>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition">Soumettre la candidature</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section id="partnership" class="py-16 bg-gray-50 hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">🤝 Partenariat avec nous</h2>
+                <h3 class="text-xl font-semibold mb-4">Construisons ensemble l'accès linguistique.</h3>
+                <p class="text-gray-600 max-w-4xl mx-auto">Chez Golden Customer Services, nous croyons en la puissance de la collaboration. En devenant notre partenaire, vous n'engagez pas seulement des interprètes  vous gagnez un allié fiable en communication interculturelle et en expérience client.</p>
+                <p class="text-gray-600 max-w-4xl mx-auto mt-4">Que vous soyez un hôpital, un cabinet d'avocats, une école, une organisation à but non lucratif, une agence gouvernementale ou une entreprise privée, nous sommes là pour vous aider à communiquer clairement avec les clients haïtiens créoles et au-delà.</p>
+            </div>
+
+            <!-- Why Partner With Us -->
+            <div class="bg-white p-8 rounded-xl shadow-md mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">🧩 Pourquoi devenir notre partenaire ?</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="flex items-start">
+                        <span class="text-green-600 mr-3 text-xl">✅</span>
+                        <span>Interprètes certifiés et professionnels</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-600 mr-3 text-xl">✅</span>
+                        <span>Spécialisés en interprétation médicale, juridique et de conférence</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-600 mr-3 text-xl">✅</span>
+                        <span>Services à distance et sur demande (disponibilité 24/7)</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-600 mr-3 text-xl">✅</span>
+                        <span>Intégration rapide et support client dédié</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-600 mr-3 text-xl">✅</span>
+                        <span>Éthique, confidentialité et compétence culturelle</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partnership Opportunities -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Pour les entreprises</h3>
+                    <p class="text-gray-600 mb-4">Externalisez vos besoins en interprétation et service client multilingue avec une équipe fiable et professionnelle.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            <span>Services d'interprétation sur demande</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            <span>Support client multilingue</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            <span>Formation sur mesure pour vos équipes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Pour les agences</h3>
+                    <p class="text-gray-600 mb-4">Collaborez avec nous pour étendre votre offre de services linguistiques et atteindre de nouveaux marchés.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Sous-traitance de projets d'interprétation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Partenariats stratégiques à long terme</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Références croisées de clients</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Partnership Form -->
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold mb-6">Demande de partenariat commercial</h3>
+                <p class="text-gray-700 mb-6">Êtes-vous une entreprise ou une agence intéressée par une collaboration avec Golden Customer Service ? Veuillez remplir le formulaire ci-dessous si vous souhaitez devenir notre partenaire.</p>
+                
+                <form id="partnership-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partnerCompany" class="block text-gray-700 mb-2">1. Nom de l'entreprise / agence*</label>
+                            <input type="text" id="partnerCompany" name="partnerCompany" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="partnerLocation" class="block text-gray-700 mb-2">2. Pays et lieu*</label>
+                            <input type="text" id="partnerLocation" name="partnerLocation" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="partnerServices" class="block text-gray-700 mb-2">3. Type de services que vous proposez ou souhaitez externaliser*</label>
+                        <textarea id="partnerServices" name="partnerServices" rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="partnerReason" class="block text-gray-700 mb-2">4. Raison de la demande de partenariat*</label>
+                        <textarea id="partnerReason" name="partnerReason" rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 mb-2">5. Langue(s) préférée(s) de collaboration</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="partnerLanguages" value="English" class="mr-2"> Anglais
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="partnerLanguages" value="French" class="mr-2"> Français
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="partnerLanguages" value="Spanish" class="mr-2"> Espagnol
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="partnerLanguages" value="Haitian Creole" class="mr-2"> Créole haïtien
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partnerWebsite" class="block text-gray-700 mb-2">6. Site web ou réseaux sociaux (si disponible)</label>
+                            <input type="url" id="partnerWebsite" name="partnerWebsite" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="partnerContact" class="block text-gray-700 mb-2">7. Nom et titre de la personne de contact*</label>
+                            <input type="text" id="partnerContact" name="partnerContact" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="partnerPhone" class="block text-gray-700 mb-2">8. Téléphone / Numéro WhatsApp*</label>
+                            <input type="tel" id="partnerPhone" name="partnerPhone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="partnerEmail" class="block text-gray-700 mb-2">9. Adresse e-mail*</label>
+                            <input type="email" id="partnerEmail" name="partnerEmail" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="partnerMessage" class="block text-gray-700 mb-2">10. Message ou proposition supplémentaire (optionnel)</label>
+                        <textarea id="partnerMessage" name="partnerMessage" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-bold transition">
+                        Recevoir un devis sous 24h
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1 -->
+                <div>
+                    <a href="index.html" class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-blue-400">Golden Customer Services</span>
+                    </a>
+                    <p class="text-gray-400">Services professionnels d'interprétation et de formation en créole haïtien pour les contextes médicaux, juridiques et de conférence.</p>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition">Interprétation médicale</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition">Interprétation juridique</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition">Interprétation de conférence</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition">Programmes de formation</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition">Services à distance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition">À propos de nous</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white transition">Carrières</a></li>
+                        <li><a href="carrees.html" class="text-gray-400 hover:text-white transition">Partenariats</a></li>
+                        <li><a href="index.html#faq" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Connectez-vous avec nous</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-400 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-700 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">Langues : Créole haïtien, Anglais, Français, Espagnol</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Golden Customer Services. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMobile = document.getElementById('nav-mobile');
+
+            hamburger.addEventListener('click', () => {
+                // Toggle mobile menu visibility
+                navMobile.classList.toggle('hidden');
+                
+                // Toggle hamburger animation
+                hamburger.classList.toggle('open');
+            });
+
+            // Tab functionality
+            const careersTab = document.getElementById('careers-tab');
+            const partnershipTab = document.getElementById('partnership-tab');
+            const careersSection = document.getElementById('careers');
+            const partnershipSection = document.getElementById('partnership');
+
+            careersTab.addEventListener('click', () => {
+                careersTab.classList.add('active', 'border-blue-600');
+                careersTab.classList.remove('border-gray-200');
+                partnershipTab.classList.remove('active', 'border-blue-600');
+                partnershipTab.classList.add('border-gray-200');
+                careersSection.classList.remove('hidden');
+                partnershipSection.classList.add('hidden');
+                
+                // Update URL
+                window.history.replaceState(null, null, 'carrees.html');
+            });
+
+            partnershipTab.addEventListener('click', () => {
+                partnershipTab.classList.add('active', 'border-blue-600');
+                partnershipTab.classList.remove('border-gray-200');
+                careersTab.classList.remove('active', 'border-blue-600');
+                careersTab.classList.add('border-gray-200');
+                partnershipSection.classList.remove('hidden');
+                careersSection.classList.add('hidden');
+                
+                // Update URL
+                window.history.replaceState(null, null, 'carrees.html');
+            });
+
+            // Check URL hash on page load
+            if (window.location.hash === 'carrees.html') {
+                partnershipTab.click();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === 'carrees.html' || targetId === 'carrees.html') {
+                    // Handle tab switching
+                    if (targetId === 'carrees.html') {
+                        document.getElementById('careers-tab').click();
+                    } else {
+                        document.getElementById('partnership-tab').click();
+                    }
+                    return;
+                }
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('nav-mobile').classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submissions
+        document.getElementById('careers-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre candidature ! Nous l\'examinerons et vous contacterons dans les 48 heures.');
+            this.reset();
+        });
+
+        document.getElementById('partnership-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Votre demande de partenariat a été envoyée. Nous y répondrons dans les 24 heures avec un devis personnalisé.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
